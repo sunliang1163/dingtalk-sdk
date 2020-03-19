@@ -244,3 +244,14 @@ class User(DingTalkBaseAPI):
             {"userid": userid},
             result_processor=lambda x: x['dept_ids']
         )
+    def get_by_mobile(self, mobile):
+        """
+        根据mobile获取成员的userid
+
+        :param mobile: 用户的手机号码
+        :return:
+        """
+        return self._get(
+            '/user/get_by_mobile',
+            {'mobile': mobile}
+        )
